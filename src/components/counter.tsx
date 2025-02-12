@@ -4,7 +4,7 @@ import { setup, assign } from "xstate";
 const counterMachine = setup({
   types: {
     context: {} as { count: number },
-    events: {} as { type: "inc" } | { type: "dec" } | { type: "reset" },
+    events: {} as { type: "INC" } | { type: "DEC" } | { type: "RESET" },
   },
   actions: {
     increment: assign({
@@ -21,9 +21,9 @@ const counterMachine = setup({
   /** @xstate-layout N4IgpgJg5mDOIC5QAoC2BDAxgCwJYDswBKAYgMwG0AGAXUVAAcB7WXAF1yf3pAA9EAtAEYRAOgBsAdiEAOSQFYAzAE4ALFQBMQxTIA0IAJ6Ihk8RMmSq005plyZAXwf60WPIVIQwlWj2asOLh5+BG1FCS0hKhlxeW0LRX0jUK1RVS07KMlVGVtFJxcMHAJiEgAnODA2ajokEH92Tm46kNVRIRzVHI6NSQ045STELvDxMfFlGImLGWUnZxB8Ji94Otdijz8WRqCW40khhEVNUVN5cX7FIXl5KlV5hyA */
   context: { count: 0 },
   on: {
-    inc: { actions: "increment" },
-    dec: { actions: "decrement" },
-    reset: { actions: "reset" },
+    INC: { actions: "increment" },
+    DEC: { actions: "decrement" },
+    RESET: { actions: "reset" },
   },
 });
 
@@ -37,7 +37,7 @@ function Counter() {
         className="btn btn-success"
         onClick={() =>
           send({
-            type: "inc",
+            type: "INC",
           })
         }
       >
@@ -48,7 +48,7 @@ function Counter() {
         className="btn btn-error"
         onClick={() =>
           send({
-            type: "dec",
+            type: "DEC",
           })
         }
       >
@@ -59,7 +59,7 @@ function Counter() {
         className="btn btn-warning"
         onClick={() =>
           send({
-            type: "reset",
+            type: "RESET",
           })
         }
       >
