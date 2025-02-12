@@ -40,7 +40,9 @@ const todoMachine = setup({
     }),
   },
 }).createMachine({
+  /** @xstate-layout N4IgpgJg5mDOIC5QAoC2BDAxgCwJYDswBKAYgEEARCgfQBUB5C+gbQAYBdRUABwHtZcAF1y98XEAA9EAWgCcrAHQA2VgBYAjAFYAHEoDse2duMAaEAE9Ee9QtUAmdcdmbWLgMzbVSgL7ezaLDxCUgAlAFEAWXoANTC6RhYOcT4BYVFxKQQtVVtdWSV9O1k3a1UzSwRpewVZWrr1O01DXXVfPxB8Xgg4cQCcAmJk-iERMSRJRDc3Wwa9Js0px20m8sQ7Vj0FTXU1JVVjOyVPLzbvIA */
   context: { todos: [] },
+
   on: {
     ADD_TODO: {
       actions: "addTodo",
