@@ -2,6 +2,9 @@ import "./App.css";
 import Call from "./components/Call";
 import Counter from "./components/Counter";
 import FetchMeme from "./components/FetchMeme";
+import Page from "./components/movie-search";
+import TicTacToe from "./components/tic-tac-toe";
+import Timer from "./components/timer";
 import Todo from "./components/Todo";
 import ToggleButton from "./components/ToggleButton";
 
@@ -13,7 +16,9 @@ function App() {
       <Counter />
       <Todo />
       <FetchMeme /> */}
-        <Call />
+        {/* <Call /> */}
+        {/* <Timer /> */}
+        <TicTacToe />
       </div>
     </div>
   );
